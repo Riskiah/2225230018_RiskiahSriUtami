@@ -11,8 +11,7 @@
                 name="katakunci"
                 value="{{ Request::get('katakunci') }}"
                 placeholder="Masukkan kata kunci"
-                aria-label="Search"
-            />
+                aria-label="Search">
             <button class="btn btn-secondary" type="submit">Cari</button>
         </form>
     </div>
@@ -33,18 +32,23 @@
             </tr>
         </thead>
         <tbody>
+            <?php $i = $data->firstItem() ?>
+            @foreach ($data as $item)
             <tr>
-                <td>1</td>
-                <td>1001</td>
-                <td>Ani</td>
-                <td>Ilmu Komputer</td>
+                <td>{{ $i }}</td>
+                <td>{{ $item->nim }}</td>
+                <td>{{ $item->nama }}</td>
+                <td>{{ $item->jurusan }}</td>
                 <td>
                     <a href="" class="btn btn-warning btn-sm">Edit</a>
                     <a href="" class="btn btn-danger btn-sm">Del</a>
                 </td>
             </tr>
+            <?php $i++ ?>
+            @endforeach
         </tbody>
     </table>
+    {{ $data->links() }}
 </div>
 <!-- AKHIR DATA --> 
 @endsection
