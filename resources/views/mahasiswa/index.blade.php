@@ -4,7 +4,7 @@
 <div class="my-3 p-3 bg-body rounded shadow-sm">
     <!-- FORM PENCARIAN -->
     <div class="pb-3">
-        <form class="d-flex" action="" method="get">
+        <form class="d-flex" action="{{ url('mahasiswa') }}" method="get">
             <input
                 class="form-control me-1"
                 type="search"
@@ -40,15 +40,19 @@
                 <td>{{ $item->nama }}</td>
                 <td>{{ $item->jurusan }}</td>
                 <td>
-                    <a href="" class="btn btn-warning btn-sm">Edit</a>
-                    <a href="" class="btn btn-danger btn-sm">Del</a>
+                    <a href="{{ url('mahasiswa/'.$item->nim.'/edit') }}" class="btn btn-warning btn-sm">Edit</a>
+                    <form onsubmit="return confirm ('Yakin akan menghapus data?')" class='d-inline' action="{{ url('mahasiswa/'.$item->nim) }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" name="submit" class="btn btn-danger btn-sm">Del</button>
+                    </form>
                 </td>
             </tr>
             <?php $i++ ?>
             @endforeach
         </tbody>
     </table>
-    {{ $data->links() }}
+    {{ $data->withQueryString()->links() }}
 </div>
 <!-- AKHIR DATA --> 
 @endsection
