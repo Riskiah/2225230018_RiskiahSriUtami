@@ -14,20 +14,7 @@ class mahasiswaController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
-    {
-        // $katakunci = $request->katakunci;
-        // $jumlahbaris = 4;
-        // if(strlen($katakunci)){
-        //     $data = mahasiswa::where('nim','like','%$katakunci%')
-        //         ->orWhere('nama','like','%$katakunci%')
-        //         ->orWhere('jurusan','like','%$katakunci%')
-        //         ->paginate($jumlahbaris);
-        // } else {
-        // $data = mahasiswa::orderBy('nim', 'desc')->paginate($jumlahbaris);
-        // }
-        // return view('mahasiswa.index')->with('data',$data);
-
+    public function index(Request $request) {
         $katakunci = $request->katakunci;
         $jumlahbaris = 4;
 
@@ -41,7 +28,6 @@ class mahasiswaController extends Controller
         }
 
         return view('mahasiswa.index')->with('data', $data);
-
     }
 
     /**
@@ -127,3 +113,4 @@ class mahasiswaController extends Controller
         return redirect()->to('mahasiswa')->with('success','Berhasil melakukan delete data');
 }
 }
+

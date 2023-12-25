@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="mb-3 row">
-                <label for="jurusan" class="col-sm-2 col-form-label">Jurusan</label>
+                <label for="jurusan" class="col-sm-2 col-form-label">Kelas</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" name='jurusan' value="{{ $data->jurusan }}" id="jurusan">
                 </div>

@@ -27,7 +27,7 @@
                 <th class="col-md-1">No</th>
                 <th class="col-md-3">NIM</th>
                 <th class="col-md-4">Nama</th>
-                <th class="col-md-2">Jurusan</th>
+                <th class="col-md-2">Kelas</th>
                 <th class="col-md-2">Aksi</th>
             </tr>
         </thead>
